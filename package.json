@@ -11,8 +11,9 @@
     "coverage": "jest --coverage",
     "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
     "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
+    "startDev": "webpack-dashboard -- node ./dist/server.js",
     "start": "node ./dist/server.js",
-    "dev": "yarn buildDev && yarn start",
+    "dev": "yarn buildDev && yarn startDev",
     "prod": "yarn buildProd && yarn start",
     "lint": "eslint ./ --ignore-path .gitignore",
     "lint:fix": "yarn lint -- --fix",
@@ -77,6 +78,7 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
+    "webpack-dashboard": "^3.2.0",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^2.5.0"
