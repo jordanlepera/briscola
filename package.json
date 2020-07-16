@@ -1,0 +1,77 @@
+{
+  "name": "briscola",
+  "version": "1.0.0",
+  "description": "A famous and addictive italian card game",
+  "main": "index.js",
+  "author": "Jordan LE PERA",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
+    "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
+    "start": "node ./dist/server.js",
+    "dev": "yarn buildDev && yarn start",
+    "prod": "yarn buildProd && yarn start",
+    "lint": "eslint ./ --ignore-path .gitignore",
+    "lint:fix": "yarn lint -- --fix",
+    "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
+    "clean": "rm -rf dist coverage"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "eslintConfig": {
+    "extends": "@imaginary-cloud/react"
+  },
+  "prettier": "@imaginary-cloud/prettier-config",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@imaginary-cloud/eslint-config-react": "1.0.1",
+    "@imaginary-cloud/prettier-config": "^1.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "enzyme": "3.8.0",
+    "enzyme-adapter-react-16": "1.7.1",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^2.0.5",
+    "style-loader": "^1.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^2.5.0"
+  }
+}
