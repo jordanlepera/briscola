@@ -24,6 +24,8 @@ app.use(
 
 app.use(webpackHotMiddleware(compiler))
 
+app.use(express.static('public'))
+
 app.get('*', (req, res, next) => {
   compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
     if (err) {

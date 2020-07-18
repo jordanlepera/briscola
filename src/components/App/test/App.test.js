@@ -4,9 +4,10 @@ import { shallow, configure } from 'enzyme'
 import App from '../App'
 
 configure({ adapter: new Adapter() })
+
 describe('<App />', () => {
-  test('renders a single <p> tag', () => {
+  it('renders a single <Main> tag', () => {
     const wrapper = shallow(<App />)
-    expect(wrapper.find('p')).toHaveLength(1)
+    expect(wrapper.find('Main')).toHaveLength(1)
   })
 })
